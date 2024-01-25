@@ -67,7 +67,7 @@ public class clovece_nezlob_se {
             System.out.print("O ");
 
         }
-        
+        HRW32
     }
            
         
