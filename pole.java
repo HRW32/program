@@ -201,14 +201,18 @@ public static void main(String[] args) {
     //9
     //převeď větu do morseovy abecedy
  
-
+        // char?         co dělá toto?
+        // proč to nemusí byt jako u toho stringu?
         char[] vety = "abcdefghijklmnopqrstuvwxyz".toCharArray();
         String[] morseofka = { ".-", "-...", "-.-.", "-..", ".", "..-.", "..-", "....", "..", ".---", ".-.", ".-..",
                 "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
         Scanner sc = new Scanner(System.in);
         System.out.println("Napiš větu");
+        // co dělá trim a toLowerCase?
         String slovo = sc.nextLine().trim().toLowerCase();
+        //   proč tady je :? a co dělá slovo.toCharArray?
         for (char a : slovo.toCharArray()) {
+            //               co dělá  indexOf(a)?
             int abeceda = new String(vety).indexOf(a);
             if (abeceda >= 0) {
                 System.out.print(morseofka[abeceda] + " ");
