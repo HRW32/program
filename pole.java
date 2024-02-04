@@ -197,30 +197,58 @@ public static void main(String[] args) {
 }
 }
 */
+
 public static void main(String[] args) {
     //9
     //převeď větu do morseovy abecedy
  
         // char?         co dělá toto?
         // proč to nemusí byt jako u toho stringu?
-        char[] vety = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-        String[] morseofka = { ".-", "-...", "-.-.", "-..", ".", "..-.", "..-", "....", "..", ".---", ".-.", ".-..",
+        String znak = "abcdefghijklmnopqrstuvwxyz";
+        String[] morseovka = { ".-", "-...", "-.-.", "-..", ".", "..-.", "..-", "....", "..", ".---", ".-.", ".-..",
                 "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
         Scanner sc = new Scanner(System.in);
         System.out.println("Napiš větu");
-        // co dělá trim a toLowerCase?
+        //trim - odstraní mezery(bíle znaky), ale ne mezi slovy
+        //toLowerCase - malá písmenka
         String slovo = sc.nextLine().trim().toLowerCase();
         //   proč tady je :? a co dělá slovo.toCharArray?
+        // : - prochází každou tu věc
         for (char a : slovo.toCharArray()) {
-            //               co dělá  indexOf(a)?
-            int abeceda = new String(vety).indexOf(a);
+            //               co dělá  indexOf(a)? - zjistím pořadí
+            int abeceda = znak.indexOf(a);
             if (abeceda >= 0) {
-                System.out.print(morseofka[abeceda] + " ");
+                System.out.print(morseovka[abeceda] + " ");
             }
  
         }
         sc.close();
     }
 }
+
+/*public static void main(String[] args) {
+    //10
+    // doma: zeptá se na příjmení a podle čísla tvého prvního jmena v abecedě tě posadí ke stolu. Jeho číslo odpovída pořadí čísla písmena v abc
+    Scanner sc = new Scanner(System.in, "Windows-1250");
+    //zeptam se a uložím to
+    System.out.println("Jaké je vaše příjmení?");
+    String prijmeni = sc.nextLine().trim().toLowerCase();
+     // Definujeme abecedu
+     String abeceda = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // prvni písmeno
+    char prvniPismeno = Character.toUpperCase(prijmeni.charAt(0));
+    // to jsem dal počet šupliku jako počet písmen
+    int rozmer = 26;
+    int[] cislo = new int[rozmer];
+
+
+    for(int i = 0; i < abeceda.length(); i++){
+            System.out.println( );
+    }
+   
+    sc.close();
+
+    }
+}*/
 
 
