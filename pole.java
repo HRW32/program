@@ -27,11 +27,12 @@ public class pole {
     //nevím k čemu jsou tento řádek
     pole [0] = 1;
     // musí to být oddělené
-    String[]simpsonovi = {"Bart","Marge" , "Lisa", "Homer"};
+    String[]simpsonovi = {"Bart", "Marge" , "Lisa", "Homer"};
     
     Arrays.sort(simpsonovi);
     int index = Arrays.binarySearch(simpsonovi, "Bart");
     System.out.println(Arrays.toString(simpsonovi));
+    
     // ukazuje seřazení čísel v tabulce ASCII
     System.out.printf("%d %d \n",(int)'h', (int)'H');
     }
@@ -140,6 +141,7 @@ System.out.println("V poli se nenachází 15");
 }
 */
 
+/*
 public static void main(String[] args) {
     //7
     // vygeneruje se 20 čísel. rozměr je od 0 do 5. Vygenerují se čísla a to poslední číslo spočítáme kolikrát bylo mezi těmi 20 čísly 
@@ -163,3 +165,58 @@ public static void main(String[] args) {
         System.out.printf("pocet vyskytu posledniho cisla: %d je: %d \n", suplik[rozmer - 1], pocetvyskytu);
 }
 }
+*/
+/*
+public static void main(String[] args) {
+    //8
+    Scanner sc = new Scanner(System.in, "Windows-1250");
+
+    String [] zelenina = {"rajče", "okurka", "zelí", "cibule", "česnek"};
+    String [] ovoce = {"jabko", "hruška", "malina", "jahoda", "švestka"};
+    System.out.println("napiš jakou zeleninu nebo ovoce chceš a vypíše se to");
+    String jidlo = sc.nextLine().trim().toLowerCase();
+   
+    for(int i = 0; i < ovoce.length; i++){
+        if (jidlo.equals(ovoce[i])){
+            System.out.println(ovoce[i] + "je ovoce.");
+            break;
+        }
+    }
+    for(int j = 0; j <zelenina.length; j++){
+        if(jidlo.equals(zelenina[j])){
+            System.out.println(zelenina[j] + "je zelenina.");
+            break;
+        }
+        else{
+            System.out.println("Tuto věc neznám");
+        }
+      //  else{
+      //    System.out.println("Tuto věc neznám");
+    }
+    
+}
+}
+*/
+public static void main(String[] args) {
+    //9
+    //převeď větu do morseovy abecedy
+ 
+
+        char[] vety = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        String[] morseofka = { ".-", "-...", "-.-.", "-..", ".", "..-.", "..-", "....", "..", ".---", ".-.", ".-..",
+                "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Napiš větu");
+        String slovo = sc.nextLine().trim().toLowerCase();
+        for (char a : slovo.toCharArray()) {
+            int abeceda = new String(vety).indexOf(a);
+            if (abeceda >= 0) {
+                System.out.print(morseofka[abeceda] + " ");
+            }
+ 
+        }
+        sc.close();
+    }
+}
+
+
