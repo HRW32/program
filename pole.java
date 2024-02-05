@@ -197,58 +197,110 @@ public static void main(String[] args) {
 }
 }
 */
-
+/*
 public static void main(String[] args) {
     //9
     //převeď větu do morseovy abecedy
  
-        // char?         co dělá toto?
-        // proč to nemusí byt jako u toho stringu?
-        String znak = "abcdefghijklmnopqrstuvwxyz";
-        String[] morseovka = { ".-", "-...", "-.-.", "-..", ".", "..-.", "..-", "....", "..", ".---", ".-.", ".-..",
+
+        char[] vety = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        String[] morseofka = { ".-", "-...", "-.-.", "-..", ".", "..-.", "..-", "....", "..", ".---", ".-.", ".-..",
                 "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
         Scanner sc = new Scanner(System.in);
         System.out.println("Napiš větu");
-        //trim - odstraní mezery(bíle znaky), ale ne mezi slovy
-        //toLowerCase - malá písmenka
         String slovo = sc.nextLine().trim().toLowerCase();
-        //   proč tady je :? a co dělá slovo.toCharArray?
-        // : - prochází každou tu věc
         for (char a : slovo.toCharArray()) {
-            //               co dělá  indexOf(a)? - zjistím pořadí
-            int abeceda = znak.indexOf(a);
+            int abeceda = new String(vety).indexOf(a);
             if (abeceda >= 0) {
-                System.out.print(morseovka[abeceda] + " ");
+                System.out.print(morseofka[abeceda] + " ");
             }
  
         }
         sc.close();
     }
 }
-
-/*public static void main(String[] args) {
+*/
+/* 
+public static void main(String[] args) {
     //10
-    // doma: zeptá se na příjmení a podle čísla tvého prvního jmena v abecedě tě posadí ke stolu. Jeho číslo odpovída pořadí čísla písmena v abc
-    Scanner sc = new Scanner(System.in, "Windows-1250");
-    //zeptam se a uložím to
-    System.out.println("Jaké je vaše příjmení?");
-    String prijmeni = sc.nextLine().trim().toLowerCase();
-     // Definujeme abecedu
-     String abeceda = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    // prvni písmeno
-    char prvniPismeno = Character.toUpperCase(prijmeni.charAt(0));
-    // to jsem dal počet šupliku jako počet písmen
-    int rozmer = 26;
-    int[] cislo = new int[rozmer];
-
-
-    for(int i = 0; i < abeceda.length(); i++){
-            System.out.println( );
+    //
+    System.out.println("Zadej 10 známek");
+    
+    for(int i = 0; i < 10; i++){
+        char znak = (char)i;
+        System.out.println(i + ": " + znak);
     }
-   
+    }
+}
+*/
+/* 
+public static void main(String[] args) {
+    //11
+    // vypočítej průměr známek
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Výpočet průměru známek");
+    System.out.println("Zadej  známky");
+    String vstup = sc.nextLine();
+    String[] znamky = vstup.split(", ");
+    int soucet = 0;
+
+    for(int i = 0; i < znamky.length; i++){
+        int hodnota = Integer.parseInt(znamky[i]);
+        soucet += hodnota;
+    }
+    double prumer = soucet/(double)znamky.length;
+    System.out.println(prumer);
+    }
+    }
+*/
+
+
+
+/* 
+public static void main(String[] args) {
+    //12
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Zadej větu:");
+    String vstup = sc.nextLine().trim();
+
+    // Nahradíme ".?!" za odpovídající smajlíky nebo jiné výrazy
+    vstup = vstup.replaceAll("\\.", ":D").replaceAll("\\?", ":(").replaceAll("!", ":)");
+
+    System.out.println(vstup);
+
     sc.close();
+}
+}
+*/
+/* 
+public static void main(String[] args) {
+    //13
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Zadej větu:");
+        String vstup = sc.nextLine().trim();
 
+        // Definujeme pole koncových znaků a jejich odpovídajících náhrad
+        String[] koncoveZnaky = {".", "?", "!"};
+        String[] nahradniVyrazy = {":D", ":(", ":)"};
+
+        // Nahradíme každý koncový znak odpovídajícím výrazem
+        for (int i = 0; i < koncoveZnaky.length; i++) {
+            vstup = vstup.replace(koncoveZnaky[i], nahradniVyrazy[i]);
+        }
+
+        System.out.println(vstup);
+
+        sc.close();
     }
-}*/
+}
+*/
+public static void main(String[] args) {
+    //14
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Zadej větu:");
+    
+}
+}
+
 
 
