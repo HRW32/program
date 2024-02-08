@@ -256,51 +256,63 @@ public static void main(String[] args) {
 
 
 
-/* 
+
 public static void main(String[] args) {
-    //12
     Scanner sc = new Scanner(System.in);
-    System.out.println("Zadej větu:");
-    String vstup = sc.nextLine().trim();
+    // 3. a) 
+    int[] cisla = new int[5];
+    for (int i = 0; i < cisla.length; i++) {
+        System.out.println("Zadejte číslo #" + (i + 1) + ": ");
+        cisla[i] = sc.nextInt();
+    }
+    System.out.print("Zadaná čísla: ");
+    for (int i = 0; i < cisla.length; i++) {
+        System.out.print(cisla[i]);
+        if (i < cisla.length - 1) {
+            System.out.print(", ");
+        }
+    }
+    // 3. b)
+    int nejmensiCislo = cisla[0];
+    int poziceNejmensihoCisla = 0;
 
-    // Nahradíme ".?!" za odpovídající smajlíky nebo jiné výrazy
-    vstup = vstup.replaceAll("\\.", ":D").replaceAll("\\?", ":(").replaceAll("!", ":)");
+    for (int i = 1; i < cisla.length; i++) {
+        if (cisla[i] < nejmensiCislo) {
+            nejmensiCislo = cisla[i];
+            poziceNejmensihoCisla = i;
+        }
+    }
 
-    System.out.println(vstup);
+    System.out.println("\nNejmenší číslo je: " + nejmensiCislo);
+    System.out.println("Nachází se na pozici: " + (poziceNejmensihoCisla + 1)); 
+
+    // c
+    System.out.println("Chcete zadat čísla znovu? (ano/ne): ");
+    sc.nextLine(); 
+    String opakovat = sc.nextLine();
+
+    if (opakovat.equalsIgnoreCase("ano")) {
+        for (int i = 0; i < cisla.length; i++) {
+            System.out.println("Zadejte číslo #" + (i + 1) + ": ");
+            cisla[i] = sc.nextInt();
+        }
+        System.out.print("Zadaná čísla: ");
+        for (int i = 0; i < cisla.length; i++) {
+            System.out.print(cisla[i]);
+            if (i < cisla.length - 1) {
+                System.out.print(", ");
+            }
+        }
+    }
 
     sc.close();
 }
 }
-*/
-/* 
-public static void main(String[] args) {
-    //13
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Zadej větu:");
-        String vstup = sc.nextLine().trim();
 
-        // Definujeme pole koncových znaků a jejich odpovídajících náhrad
-        String[] koncoveZnaky = {".", "?", "!"};
-        String[] nahradniVyrazy = {":D", ":(", ":)"};
 
-        // Nahradíme každý koncový znak odpovídajícím výrazem
-        for (int i = 0; i < koncoveZnaky.length; i++) {
-            vstup = vstup.replace(koncoveZnaky[i], nahradniVyrazy[i]);
-        }
 
-        System.out.println(vstup);
 
-        sc.close();
-    }
-}
-*/
-public static void main(String[] args) {
-    //14
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Zadej větu:");
-    
-}
-}
+
 
 
 
